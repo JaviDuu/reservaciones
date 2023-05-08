@@ -1,0 +1,14 @@
+table {
+    border: 35px solid;
+  }
+
+  div{
+    display: flex;
+    text-align: center;
+    padding: 5px;
+  }
+
+  body{
+    padding-top: 50px;
+    text-align: center;
+  }
