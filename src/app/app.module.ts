@@ -16,6 +16,10 @@ import { LoginComponent } from './components/login/login.component';
 import { RegistrarComponent } from './components/registrar/registrar.component';
 import { IntegrantesService } from './components/acerca-de/integrantes.service';
 
+import { MasonryGridComponent } from './components/masonry-grid/masonry-grid.component';
+import { ClimaActualComponent } from './components/clima-actual/clima-actual.component';
+import { HttpClientModule } from '@angular/common/http';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,13 +32,16 @@ import { IntegrantesService } from './components/acerca-de/integrantes.service';
     HeaderComponent,
     FooterComponent,
     LoginComponent,
-    RegistrarComponent
+    RegistrarComponent,
+    MasonryGridComponent,
+    ClimaActualComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [IntegrantesService],
   bootstrap: [AppComponent]

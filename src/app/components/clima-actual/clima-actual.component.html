@@ -1,0 +1,28 @@
+<h2>Informacion en tiempo real sobre las condiciones atmosféricas en México</h2>
+
+<div *ngIf="datos && datos.length">
+  <table style="margin: 0 auto;">
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Humedad Relativa</th>
+        <th>Dirección del Viento</th>
+        <th>Probabilidad de Precipitación</th>
+        <th>Temperatura (°C)</th>
+        <th>Latitud</th>
+        <th>Descripción del Cielo</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let dato of datos">
+        <td>{{ dato.name }}</td>
+        <td>{{ dato.relativehumidity }}</td>
+        <td>{{ dato.winddirectioncardinal }}</td>
+        <td>{{ dato.probabilityofprecip }}</td>
+        <td>{{ dato.tempc }}</td>
+        <td>{{ dato.latitude }}</td>
+        <td>{{ dato.skydescriptionlong }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
