@@ -11,8 +11,8 @@ import { DatePipe } from '@angular/common';
 })
 export class CalendarioComponent implements OnInit{
 
-  public fechaMinima: Date = new Date();
-  public fechaStrMinima: string = "";
+  public fechaMinima!: Date ;
+  public fechaStrMinima!: string | null;
 
   calanderForm: FormGroup;
 
@@ -32,6 +32,5 @@ export class CalendarioComponent implements OnInit{
 
   ngOnInit(): void {
       this.fechaMinima=new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate());
-      this.fechaStrMinima = this.pd.transform(this.fechaMinima, "yyyy-MM-dd");
   }
 }
