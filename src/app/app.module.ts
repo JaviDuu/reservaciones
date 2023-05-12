@@ -15,12 +15,12 @@ import { FooterComponent } from './components/footer/footer.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegistrarComponent } from './components/registrar/registrar.component';
 import { IntegrantesService } from './components/acerca-de/integrantes.service';
+import { DatePipe } from '@angular/common';
 
 @NgModule({
   declarations: [
     AppComponent,
     InicioComponent,
-    CalendarioComponent,
     ReservarComponent,
     AcercaDeComponent,
     DatosUsuarioComponent,
@@ -28,7 +28,8 @@ import { IntegrantesService } from './components/acerca-de/integrantes.service';
     HeaderComponent,
     FooterComponent,
     LoginComponent,
-    RegistrarComponent
+    RegistrarComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -36,7 +37,7 @@ import { IntegrantesService } from './components/acerca-de/integrantes.service';
     FormsModule,
     ReactiveFormsModule,
   ],
-  providers: [IntegrantesService],
+  providers: [IntegrantesService, DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
