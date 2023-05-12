@@ -19,6 +19,7 @@ import { IntegrantesService } from './components/acerca-de/integrantes.service';
 import { MasonryGridComponent } from './components/masonry-grid/masonry-grid.component';
 import { ClimaActualComponent } from './components/clima-actual/clima-actual.component';
 import { HttpClientModule } from '@angular/common/http';
+import { SecurityVideoPipe } from './security-video.pipe';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { HttpClientModule } from '@angular/common/http';
     LoginComponent,
     RegistrarComponent,
     MasonryGridComponent,
-    ClimaActualComponent
+    ClimaActualComponent,
+    SecurityVideoPipe
   ],
   imports: [
     BrowserModule,
