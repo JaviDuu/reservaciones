@@ -24,6 +24,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatTableModule } from '@angular/material/table';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
+import { MostrarComponent } from './mostrar/mostrar.component';
+import { BuscarComponent } from './buscar/buscar.component';
 
 
 @NgModule({
@@ -41,7 +43,9 @@ import { MatInputModule } from '@angular/material/input';
     RegistrarComponent,
     MasonryGridComponent,
     ClimaActualComponent,
-    SecurityVideoPipe
+    SecurityVideoPipe,
+    MostrarComponent,
+    BuscarComponent
   ],
   imports: [
     BrowserModule,
