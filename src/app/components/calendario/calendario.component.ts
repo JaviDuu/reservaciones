@@ -1,6 +1,6 @@
 import { DatePipe } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { AbstractControl, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Component({
@@ -8,9 +8,8 @@ import { Router } from '@angular/router';
   templateUrl: './calendario.component.html',
   styleUrls: ['./calendario.component.css']
 })
-export class CalendarioComponent implements OnInit{
-  public fechaMinima:Date = new Date();
-  public fechaStrMinima: string | null = "";
+export class CalendarioComponent {
+
 
   calanderForm: FormGroup = this.formBuilder.group({
     dia: ''
@@ -19,10 +18,9 @@ export class CalendarioComponent implements OnInit{
   constructor(
     private formBuilder: FormBuilder,
     private router: Router,
-    private pd: DatePipe
   ) {
     this.calanderForm = new FormGroup({
-      'dia': new FormControl('', Validators.required)
+      'dia': new FormControl('', [Validators.required, this.fechaPasada])
     })
 
   }
@@ -31,8 +29,15 @@ export class CalendarioComponent implements OnInit{
     this.router.navigate(['reservar/opciones', this.calanderForm.value.dia]);
   }
 
-  ngOnInit(): void {
-    this.fechaMinima = new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate());
-    this.fechaStrMinima = this.pd.transform(this.fechaMinima, "yyyy-MM-dd");
+  fechaPasada(control: AbstractControl): {[key:string]: boolean} | null{
+  const fechaIngresada = new Date(control.value);
+  const fechaActual = new Date();
+
+  if (fechaIngresada < fechaActual) {
+    return { 'fechaPasada': true };
   }
+
+  return null;
+  }
+
 }

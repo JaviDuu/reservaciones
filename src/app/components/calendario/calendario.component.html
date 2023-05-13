@@ -4,9 +4,12 @@
             <form [formGroup]="calanderForm" (ngSubmit)="onSubmit()" class="needs-validation" novalidate>
                 <div class="form-group">
                     <label for="exampleInputDia">Dia</label>
-                    <input formControlName="dia" type="date" class="form-control" id="exampleInputDia" aria-describedby="diaHelp" placeholder="Ingresar Dia" [min]="fechaStrMinima">
+                    <input formControlName="dia" type="date" class="form-control" id="exampleInputDia" aria-describedby="diaHelp" placeholder="Ingresar Dia">
+                    <div *ngIf="calanderForm.controls['dia'].errors?.['fechaPasada']">
+                        La fecha ingresada debe ser posterior a la fecha actual.
+                    </div>
                 </div>
-                <button type="submit" class="btn btn-primary">Seleccionar</button>
+                <button type="submit" class="btn btn-primary" [disabled]="calanderForm.invalid">Seleccionar</button>
             </form>
         </div>
         <div class="col-md-6">
