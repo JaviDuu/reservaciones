@@ -3,13 +3,16 @@
         <div class="col-md-6">
             <form [formGroup]="calanderForm" (ngSubmit)="onSubmit()" class="needs-validation" novalidate>
                 <div class="form-group">
-                    <label for="exampleInputDia">Dia</label>
-                    <input formControlName="dia" type="date" class="form-control" id="exampleInputDia" aria-describedby="diaHelp" placeholder="Ingresar Dia">
+                    <label for="exampleInputDia"></label>
+                    <mat-form-field>
+                        <input matInput formControlName="dia" type="date" placeholder="Ingresar Dia">
+                    </mat-form-field>
                     <div *ngIf="calanderForm.controls['dia'].errors?.['fechaPasada']">
                         La fecha ingresada debe ser posterior a la fecha actual.
                     </div>
                 </div>
-                <button type="submit" class="btn btn-primary" [disabled]="calanderForm.invalid">Seleccionar</button>
+                <button mat-raised-button color="primary" [disabled]="calanderForm.invalid">Seleccionar</button>
+
             </form>
         </div>
         <div class="col-md-6">

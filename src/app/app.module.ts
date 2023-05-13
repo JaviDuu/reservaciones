@@ -20,6 +20,11 @@ import { MasonryGridComponent } from './components/masonry-grid/masonry-grid.com
 import { ClimaActualComponent } from './components/clima-actual/clima-actual.component';
 import { HttpClientModule } from '@angular/common/http';
 import { SecurityVideoPipe } from './security-video.pipe';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatTableModule } from '@angular/material/table';
+import { MatButtonModule } from '@angular/material/button';
+import { MatInputModule } from '@angular/material/input';
+
 
 @NgModule({
   declarations: [
@@ -43,7 +48,11 @@ import { SecurityVideoPipe } from './security-video.pipe';
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MatTableModule,
+    MatButtonModule,
+    MatInputModule,
   ],
   providers: [IntegrantesService],
   bootstrap: [AppComponent]
