@@ -26,6 +26,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { MostrarComponent } from './mostrar/mostrar.component';
 import { BuscarComponent } from './buscar/buscar.component';
+import { DestinosPopularesComponent } from './components/destinos-populares/destinos-populares.component';
 
 
 @NgModule({
@@ -45,7 +46,8 @@ import { BuscarComponent } from './buscar/buscar.component';
     ClimaActualComponent,
     SecurityVideoPipe,
     MostrarComponent,
-    BuscarComponent
+    BuscarComponent,
+    DestinosPopularesComponent
   ],
   imports: [
     BrowserModule,

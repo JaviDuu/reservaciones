@@ -20,18 +20,18 @@ export class ReservarComponent implements OnInit {
     };
     console.log(this.avion);
   }
-  
+
 
   guardarDiayHora(dia: string, hora: string) {
     const imprimir = JSON.parse(localStorage.getItem('imprimir') || '[]');
     imprimir.push({dia, hora});
     localStorage.setItem('imprimir', JSON.stringify(imprimir));
   }
-  
+
 
   reservarVuelo(hora: string) {
     localStorage.setItem('dia', this.avion.dia);
     localStorage.setItem('hora', hora);
   }
-  
+
 }

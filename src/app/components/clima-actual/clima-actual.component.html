@@ -1,28 +1,36 @@
-<h2>Informacion en tiempo real sobre las condiciones atmosféricas en México</h2>
+<div class="contenedor-clima">
+    <h2 class="text-center" style="color: #368986;">
+        Informacion en tiempo real sobre las condiciones atmosféricas en México
+    </h2>
 
-<div *ngIf="datos && datos.length">
-    <table style="margin: 0 auto;">
-        <thead>
-            <tr>
-                <th>Nombre</th>
-                <th>Humedad Relativa</th>
-                <th>Dirección del Viento</th>
-                <th>Probabilidad de Precipitación</th>
-                <th>Temperatura (°C)</th>
-                <th>Latitud</th>
-                <th>Descripción del Cielo</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let dato of datos">
-                <td>{{ dato.name }}</td>
-                <td>{{ dato.relativehumidity }}</td>
-                <td>{{ dato.winddirectioncardinal }}</td>
-                <td>{{ dato.probabilityofprecip }}</td>
-                <td [ngClass]="{'temperatura': dato.tempc > '30'}">{{ dato.tempc }}</td>
-                <td>{{ dato.latitude }}</td>
-                <td [ngStyle]="{'background-color': backgroundColor, 'color': Color}">{{ dato.skydescriptionlong }}</td>
-            </tr>
-        </tbody>
-    </table>
+    <div *ngIf="datos && datos.length">
+        <table class="table">
+            <thead class="encabezado-tabla">
+                <tr>
+                    <th scope="col" class="text-center">Nombre</th>
+                    <th scope="col" class="text-center">Humedad Relativa</th>
+                    <th scope="col" class="text-center">Dirección del Viento</th>
+                    <th scope="col" class="text-center">Probabilidad de Precipitación</th>
+                    <th scope="col" class="text-center">Temperatura (°C)</th>
+                    <th scope="col" class="text-center">Latitud</th>
+                    <th scope="col" class="text-center">Descripción del Cielo</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let dato of datos">
+                    <td class="text-center">{{ dato.name }}</td>
+                    <td class="text-center">{{ dato.relativehumidity }}</td>
+                    <td class="text-center">{{ dato.winddirectioncardinal }}</td>
+                    <td class="text-center">{{ dato.probabilityofprecip }}</td>
+                    <td class="text-center" [ngClass]="{ temperatura: dato.tempc > '30' }">
+                        {{ dato.tempc }}
+                    </td>
+                    <td class="text-center">{{ dato.latitude }}</td>
+                    <td class="text-center">
+                        {{ dato.skydescriptionlong }}
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </div>

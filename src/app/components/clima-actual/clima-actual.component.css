@@ -1,27 +1,15 @@
-p {
-    font-family: Lato;
+.contenedor-clima {
+    padding: 15px;
+    margin: 0 auto;
+    width: 80%;
 }
 
-h2 {
-    color: brown;
-    text-align: center;
-}
-
-table {
-    color: rgb(41, 41, 190);
-    text-align: center;
-}
-
-td {
-    background-color: rgb(228, 220, 220);
-    text-align: center;
-}
-
-div {
-    text-align: center;
+.encabezado-tabla {
+    background-color: #002930;
+    color: white;
 }
 
 .temperatura {
-    background-color: red;
-    color: yellow;
+    background-color: #368986;
+    color: white;
 }

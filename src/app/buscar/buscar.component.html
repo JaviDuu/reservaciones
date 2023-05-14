@@ -1,22 +1,15 @@
 <input #msg class="form-control" (keyup.enter)="ver(msg.value)" type="text">
 <ng-container *ngIf="index !== -1 else noexiste">
-    <div class=".card.p-3 mt-2">
+    <div class="card p-3 mt-2">
         <div class="card-block">
-            <div class="card-title">
-                <p>Origen-Destino:{{datos.origen_Destino}}</p>
+            <div class="card-body">
+                <p>Descripcion: {{datos.descripcion}}
             </div>
-            <div class="text">
-                <p>Fecha de Vuelo: {{datos.fecha_de_vuelo}}</p>
-            </div>
-            <div class="text">
-                <p>Hora de Salida-Llegada: {{datos.horario_de_salida_llegada}}</p>
-            </div>
-            <div class="text">
-                <p>Vuelo: {{datos.vuelo}}
-            </div>
+            <video width="600px" height="550px" autoplay loop>
+                <source [src]="datos.img" type="video/mp4">
+              </video>
         </div>
     </div>
-    <img [src]="datos.img" alt="" class="card-img img-fluid">
 </ng-container>
 
 <ng-template #noexiste>

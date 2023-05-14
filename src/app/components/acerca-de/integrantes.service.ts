@@ -31,7 +31,7 @@ export class IntegrantesService {
       name: "Fatima Martínez",
       email: "al243756@edu.uaa.mx"
     }
-    
+
   ]
 
 

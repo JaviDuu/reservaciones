@@ -1,4 +1,5 @@
 import { Component, ViewChild, ElementRef } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Component({
@@ -7,11 +8,19 @@ import { Router } from '@angular/router';
   styleUrls: ['./datos-usuario.component.css']
 })
 export class DatosUsuarioComponent {
-  
+
+  datosForm: FormGroup;
+
   // Se usa el decorador @ViewChild para obtener la referencia al formulario en el HTML
   @ViewChild('userForm') userForm!: ElementRef<HTMLFormElement>;
 
-  constructor(private router: Router) {}
+  constructor(private router: Router) {
+    this.datosForm = new FormGroup({
+      'nombre': new FormControl('', Validators.required),
+      'pasajeros': new FormControl('', Validators.required),
+      'contacto': new FormControl('', Validators.required)
+    });
+  }
 
   confirmar() {
     // Se obtiene la referencia al formulario nativo del DOM usando la propiedad nativeElement del ElementRef

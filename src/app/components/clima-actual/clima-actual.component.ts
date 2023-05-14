@@ -11,8 +11,6 @@ export class ClimaActualComponent {
   httpData: any;
   array: any[] = [];
   datos: any[] = [];
-  backgroundColor: string = "blue";
-  Color: string = "white";
 
 
   constructor(private httpclient: HttpClient) {
